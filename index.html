@@ -1,0 +1,1149 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+#wholesale-custom-page {
+    --bg-main: #ffffff;
+    --text-main: #111111;
+    --text-light: #4b5563;
+    --border-color: #e5e7eb;
+    --accent-color: #111827;
+    --brand-blue: #4284F3;
+    --brand-blue-light: rgba(66, 132, 243, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background-color: transparent; 
+    line-height: 1.6;
+    width: 100%;
+    box-sizing: border-box;
+    margin: -40px 0 0 0; 
+    padding: 0;
+}
+
+#wholesale-custom-page * { box-sizing: border-box; }
+
+#wholesale-custom-page h1, 
+#wholesale-custom-page h2, 
+#wholesale-custom-page h3, 
+#wholesale-custom-page h4, 
+#wholesale-custom-page p {
+    margin-top: 0;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+#wholesale-custom-page h1, 
+#wholesale-custom-page h2, 
+#wholesale-custom-page h3 {
+    line-height: 1.3;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+#wholesale-custom-page h1 { font-size: 3.2rem; margin-bottom: 1.2rem; }
+#wholesale-custom-page h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+#wholesale-custom-page h3 { font-size: 1.4rem; margin-bottom: 0.6rem; }
+
+#wholesale-custom-page p {
+    color: var(--text-light);
+    margin-bottom: 1.25rem;
+    font-size: 1.15rem; 
+}
+
+#wholesale-custom-page a {
+    text-decoration: none;
+    color: var(--brand-blue);
+}
+
+#wholesale-custom-page img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#wholesale-custom-page .container {
+    width: 100%;
+    max-width: 1200px; 
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+#wholesale-custom-page section {
+    padding: 4rem 0;
+    background-color: transparent; 
+}
+
+#wholesale-custom-page .text-center { text-align: center; }
+
+#wholesale-custom-page .section-header {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+#wholesale-custom-page .section-header p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+#wholesale-custom-page .btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 16px 32px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#wholesale-custom-page .btn-outline {
+    position: relative;
+    background-color: transparent;
+    color: var(--brand-blue);
+    border: 2px solid var(--brand-blue-light);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    z-index: 1;
+    font-weight: 600;
+}
+
+#wholesale-custom-page .btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--brand-blue);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+#wholesale-custom-page .btn-outline:hover {
+    color: #ffffff;
+    border-color: var(--brand-blue);
+}
+
+#wholesale-custom-page .btn-outline:hover::before { width: 100%; }
+
+#wholesale-custom-page .btn-block {
+    display: block;
+    width: 100%;
+}
+
+#wholesale-custom-page .grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+#wholesale-custom-page .grid-3-col {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+#wholesale-custom-page .card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+#wholesale-custom-page .card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+}
+
+/* Hero */
+#wholesale-custom-page .hero {
+    padding: 3rem 5% 5rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--brand-blue) 0%, #296adb 100%);
+    color: #ffffff;
+}
+
+#wholesale-custom-page .hero h1 {
+    color: #ffffff; 
+    max-width: 900px;
+    margin: 0 auto 1.5rem auto;
+}
+
+#wholesale-custom-page .hero p.lead {
+    font-size: 1.3rem; 
+    max-width: 700px;
+    margin: 0 auto 2.5rem auto;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+#wholesale-custom-page .hero .subtitle {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+}
+
+#wholesale-custom-page .hero .btn {
+    background-color: #ffffff;
+    color: var(--brand-blue);
+    font-size: 1.35rem; 
+    font-weight: 700;
+    padding: 18px 42px; 
+    border-radius: 50px; 
+}
+
+#wholesale-custom-page .hero .btn:hover {
+    background-color: #f9fafb;
+    color: #296adb;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Features */
+#wholesale-custom-page .feature-icon {
+    width: 56px;
+    height: 56px;
+    background-color: #f4f7f9;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--brand-blue); 
+}
+
+#wholesale-custom-page .feature-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+#wholesale-custom-page .card p:last-child { margin-bottom: 0; }
+
+/* Products */
+#wholesale-custom-page .product-card { padding: 0; overflow: hidden; }
+
+#wholesale-custom-page .product-image-placeholder {
+    width: 100%;
+    height: 260px;
+    background-color: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+#wholesale-custom-page .product-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#wholesale-custom-page .product-content {
+    padding: 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#wholesale-custom-page .product-content p { flex-grow: 1; }
+
+/* Form */
+#wholesale-custom-page .inquiry-form-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 3.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+#wholesale-custom-page fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin: 0 0 2.5rem 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+#wholesale-custom-page legend {
+    font-weight: 700;
+    color: var(--accent-color);
+    background: #ffffff;
+    padding: 8px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+}
+
+#wholesale-custom-page .form-group {
+    margin-bottom: 1.8rem;
+    width: 100%;
+}
+
+#wholesale-custom-page .form-group:last-child { margin-bottom: 0; }
+
+#wholesale-custom-page label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+#wholesale-custom-page .required-star {
+    color: var(--brand-blue);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+#wholesale-custom-page input[type="text"],
+#wholesale-custom-page input[type="email"],
+#wholesale-custom-page input[type="tel"],
+#wholesale-custom-page select,
+#wholesale-custom-page textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1.15rem;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    transition: var(--transition);
+    margin: 0;
+}
+
+#wholesale-custom-page input:focus, 
+#wholesale-custom-page select:focus, 
+#wholesale-custom-page textarea:focus {
+    outline: none;
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 0 3px rgba(66, 132, 243, 0.15);
+}
+
+#wholesale-custom-page .form-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    #wholesale-custom-page .form-grid-2x2 { grid-template-columns: 1fr; }
+}
+
+#wholesale-custom-page .checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+#wholesale-custom-page .checkbox-label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 1.15rem;
+    cursor: pointer;
+    margin: 0;
+}
+
+#wholesale-custom-page .checkbox-label input[type="checkbox"] {
+    margin-right: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--brand-blue);
+}
+
+#wholesale-custom-page .hidden-input {
+    display: none;
+    margin-top: 12px;
+}
+
+#wholesale-custom-page #inquiry-form { padding-bottom: 1rem; }
+
+#wholesale-custom-page .btn-submit-custom {
+    border-radius: 50px;
+    border: 2px solid var(--brand-blue);
+    background-color: transparent;
+    color: var(--brand-blue);
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 18px 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#wholesale-custom-page .btn-submit-custom:hover {
+    background-color: var(--brand-blue);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(66, 132, 243, 0.25);
+    transform: translateY(-2px);
+}
+
+/* BATCH GUIDE TRIGGER LINK & POPUP */
+#wholesale-custom-page .batch-guide-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brand-blue);
+    padding: 0;
+    margin: 0 auto;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(66, 132, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+#wholesale-custom-page .batch-guide-trigger:hover {
+    color: #296adb;
+    text-decoration-color: #296adb;
+}
+
+#wholesale-custom-page .batch-guide-trigger .trigger-icon {
+    width: 18px;
+    height: 18px;
+    background-color: var(--brand-blue);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease;
+}
+
+#wholesale-custom-page .batch-guide-trigger:hover .trigger-icon {
+    background-color: #296adb;
+}
+
+#wholesale-custom-page .batch-guide-trigger .trigger-icon svg {
+    width: 10px;
+    height: 10px;
+    color: #ffffff;
+}
+
+/* Overlay */
+#wholesale-custom-page .batch-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(17, 24, 39, 0.45);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+}
+
+#wholesale-custom-page .batch-overlay.active { display: block; }
+
+/* Popup panel */
+#wholesale-custom-page .batch-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -48%) scale(0.97);
+    z-index: 9999;
+    width: min(680px, 92vw);
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    padding: 2.5rem 2.8rem 2.8rem;
+    opacity: 0;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+#wholesale-custom-page .batch-popup.active {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#wholesale-custom-page .batch-popup-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 1.8rem;
+    gap: 1rem;
+}
+
+#wholesale-custom-page .batch-popup-header h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0;
+    line-height: 1.3;
+}
+
+#wholesale-custom-page .batch-popup-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: #9ca3af;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: color 0.15s ease;
+    font-family: inherit;
+}
+
+#wholesale-custom-page .batch-popup-close:hover { color: var(--accent-color); }
+
+#wholesale-custom-page .batch-popup-close svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+/* Tier rows */
+#wholesale-custom-page .tier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#wholesale-custom-page .tier-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    background-color: #f8faff;
+    border: 1px solid rgba(66, 132, 243, 0.12);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#wholesale-custom-page .tier-item:hover {
+    background-color: rgba(66, 132, 243, 0.06);
+    border-color: rgba(66, 132, 243, 0.28);
+}
+
+#wholesale-custom-page .tier-badge {
+    flex-shrink: 0;
+    min-width: 110px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+#wholesale-custom-page .tier-badge.tier-1 { background-color: #e8f4fd; color: #1a6bbf; }
+#wholesale-custom-page .tier-badge.tier-2 { background-color: #e8f5e9; color: #2e7d32; }
+#wholesale-custom-page .tier-badge.tier-3 { background-color: #fff3e0; color: #e65100; }
+#wholesale-custom-page .tier-badge.tier-4 { background-color: #f3e5f5; color: #7b1fa2; }
+
+#wholesale-custom-page .tier-info { flex: 1; }
+
+#wholesale-custom-page .tier-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 0 0 5px 0;
+    line-height: 1.3;
+}
+
+#wholesale-custom-page .tier-desc {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin: 0;
+    line-height: 1.55;
+}
+
+#wholesale-custom-page .batch-popup-footer {
+    margin-top: 1.8rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+#wholesale-custom-page .batch-popup-footer p {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+#wholesale-custom-page .batch-popup-footer strong {
+    color: var(--brand-blue);
+}
+
+/* Section header subtext area */
+#wholesale-custom-page .section-subtext-block {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#wholesale-custom-page .section-subtext-block p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 0.8rem;
+}
+
+/* SOCIAL MEDIA BUTTONS */
+#wholesale-custom-page .social-follow-block {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#wholesale-custom-page .social-follow-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+#wholesale-custom-page .social-icons-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#wholesale-custom-page .social-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid var(--border-color);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+#wholesale-custom-page .social-icon-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+#wholesale-custom-page .social-icon-btn[aria-label="Facebook"]:hover  { background-color: #1877f2; color: #fff; border-color: #1877f2; }
+#wholesale-custom-page .social-icon-btn[aria-label="Instagram"]:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; border-color: #dc2743; }
+#wholesale-custom-page .social-icon-btn[aria-label="YouTube"]:hover   { background-color: #ff0000; color: #fff; border-color: #ff0000; }
+#wholesale-custom-page .social-icon-btn[aria-label="Pinterest"]:hover { background-color: #e60023; color: #fff; border-color: #e60023; }
+#wholesale-custom-page .social-icon-btn[aria-label="TikTok"]:hover    { background-color: #010101; color: #fff; border-color: #010101; }
+</style>
+
+<div id="wholesale-custom-page">
+    <header class="hero">
+        <div class="container">
+            <h1>Bulk Pricing for Makers & Small Businesses</h1>
+            <p class="lead">Premium colored plywood and laser-ready materials trusted by laser studios, Etsy sellers and maker communities.</p>
+            <a href="#inquiry-form" class="btn">Apply for Wholesale</a>
+            <p class="subtitle">Perfect for laser engraving, craft production and creative manufacturing.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Partner With Us?</h2>
+                <p>We understand the specific needs of creative manufacturing and design our materials to boost your workflow.</p>
+            </div>
+            <div class="grid-3-col">
+                <div class="card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3>Laser-Ready Materials</h3>
+                    <p>Clean cutting, vibrant colors and consistent quality specifically engineered for laser engraving and cutting machines.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3>Save Production Time</h3>
+                    <p>Pre-colored and pre-finished materials significantly reduce painting, masking, and finishing time in your shop.</p>
+                </div>
+                <div class="card">
+                    <div class="feature-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
+                    </div>
+                    <h3>Trusted by Makers</h3>
+                    <p>Reliably used by laser studios, successful Etsy sellers, and craft businesses worldwide for their daily production.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premier Materials Collection</h2>
+                <p>Browse a sample of our high-quality materials available for wholesale purchasing.</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Creatorally_8pcs_Pre-paint_colored_Plywood_Sheets.jpg?v=1774245016" alt="Pre-painted Colored Plywood">
+                    </div>
+                    <div class="product-content">
+                        <h3>Pre-painted Colored Plywood</h3>
+                        <p>Vibrant, consistent colors on high-grade core. Perfect for layered art and signage.</p>
+                        <a href="https://creatorally.com/products/creatorally-double-sided-multi-colored-plywood-mix-8pcs-set-diy-thin-wood-12-x-12-3mm-for-wood-craft-projects" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/iridescent_color-shift_plywood_sheets_12_12_30_30_cm_3mm_creatorally_laser-safe_chameleon_wood_f6698ace-902f-49be-8173-0c8d8455ed0e.png?v=1773385337" alt="Iridescent Color-Shift Plywood">
+                    </div>
+                    <div class="product-content">
+                        <h3>Iridescent Color-Shift Plywood</h3>
+                        <p>Eye-catching materials that change color based on viewing angle and lighting.</p>
+                        <a href="https://creatorally.com/products/iridescent-color-shift-plywood-sheets" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/mega-menu-139130-scratch-plywood-725535729.jpg?v=1768979049" alt="3-Layer-Color Plywood">
+                    </div>
+                    <div class="product-content">
+                        <h3>3-Layer-Color Plywood</h3>
+                        <p>Engrave through the top layer to reveal a contrasting color core automatically.</p>
+                        <a href="https://creatorally.com/products/creatorally-3-layer-colored-scratch-plywood-12x12-laser-engraving-sheet" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/12312312.png?v=1773385660" alt="Raw Plywood">
+                    </div>
+                    <div class="product-content">
+                        <h3>Raw Plywood</h3>
+                        <p>High-grade, void-free raw wood sheets ready for your custom stains and finishes.</p>
+                        <a href="https://creatorally.com/collections/wood" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/2414123.png?v=1773385844" alt="Acrylic Sheets">
+                    </div>
+                    <div class="product-content">
+                        <h3>Acrylic Sheets</h3>
+                        <p>Cuts like butter, engraves frosty white. Available in solids, pastels, and mirrored.</p>
+                        <a href="https://creatorally.com/collections/acrylic" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+
+                <div class="card product-card">
+                    <div class="product-image-placeholder">
+                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/3-abs_05b0e7ef-cde4-4655-9f64-1ae446a1a259.jpg?v=1773385984" alt="Two-tone ABS Plastic Sheets">
+                    </div>
+                    <div class="product-content">
+                        <h3>Two-tone ABS Plastic Sheets</h3>
+                        <p>Flexible, durable plastic ideal for industrial labels, badges, and tough environments.</p>
+                        <a href="https://creatorally.com/collections/abs-4pcs-12x8-black-abs-two-tone-plastic-laser-engraving-sheet-on-creatorally" class="btn btn-outline btn-block">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Wholesale Program Benefits</h2>
+            </div>
+            <div class="grid-3-col">
+                <div class="card text-center">
+                    <h3>Better Wholesale Pricing</h3>
+                    <p>Enjoy significantly lower pricing compared to standard retail purchases to protect your margins.</p>
+                </div>
+                <div class="card text-center">
+                    <h3>Bulk Order Advantages</h3>
+                    <p>Access deep volume discounts, pallet shipping options, and flexible purchasing tiers.</p>
+                </div>
+                <div class="card text-center">
+                    <h3>Business Support</h3>
+                    <p>Get priority fulfillment, custom sourcing assistance, and special support for your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inquiry-form">
+        <div class="container">
+            <div class="section-header">
+                <h2>Wholesale Application</h2>
+            </div>
+
+            <div class="section-subtext-block">
+                <p>Tell us about your business and purchasing needs. We typically review and respond within 1–2 business days.</p>
+                <button class="batch-guide-trigger" id="batch-guide-btn" type="button">
+                    <span class="trigger-icon">
+                        <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 110 20A10 10 0 0112 2z"/></svg>
+                    </span>
+                    View batch size guide
+                </button>
+            </div>
+
+            <div class="batch-overlay" id="batch-overlay"></div>
+
+            <div class="batch-popup" id="batch-popup" role="dialog" aria-modal="true" aria-labelledby="batch-popup-title">
+                <div class="batch-popup-header">
+                    <h3 id="batch-popup-title">Wholesale Batch Size Guide</h3>
+                    <button class="batch-popup-close" id="batch-popup-close" aria-label="Close">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                    </button>
+                </div>
+
+                <div class="tier-list">
+                    <div class="tier-item">
+                        <span class="tier-badge tier-1">8–20 Sets</span>
+                        <div class="tier-info">
+                            <p class="tier-title">Initial Test Batch</p>
+                            <p class="tier-desc">Ideal for product testing and early-stage evaluation before committing to larger volumes.</p>
+                        </div>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-badge tier-2">20–50 Sets</span>
+                        <div class="tier-info">
+                            <p class="tier-title">Growth Batch</p>
+                            <p class="tier-desc">Suitable for small-scale production and expanding demand as your business scales.</p>
+                        </div>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-badge tier-3">50–100 Sets</span>
+                        <div class="tier-info">
+                            <p class="tier-title">Medium Batch</p>
+                            <p class="tier-desc">Regular, consistent orders qualify for more favorable pricing and streamlined fulfillment.</p>
+                        </div>
+                    </div>
+                    <div class="tier-item">
+                        <span class="tier-badge tier-4">100+ Sets</span>
+                        <div class="tier-info">
+                            <p class="tier-title">Large-Volume Orders</p>
+                            <p class="tier-desc">Best pricing available — designed for long-term partnerships and stable, high-volume supply.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="batch-popup-footer">
+                    <p>Select your estimated volume in the form below, or <strong>mention your preferred batch size in the message field</strong> for a tailored quote.</p>
+                </div>
+            </div>
+
+            <div class="inquiry-form-wrapper">
+                <form id="wholesale-submit-form" action="https://formspree.io/f/xlgpnvjk" method="POST">
+                    
+                    <fieldset>
+                        <legend>1. Contact Information</legend>
+                        <div class="form-grid-2x2">
+                            <div class="form-group">
+                                <label for="name">Full Name or Business Name <span class="required-star">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Jane Doe / Acme Lasers">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="jane@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required-star">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <input type="text" id="country" name="country" list="country-list" placeholder="Select or type your country">
+                                <datalist id="country-list">
+                                    <option value="United States">
+                                    <option value="United Kingdom">
+                                    <option value="Canada">
+                                    <option value="Australia">
+                                    <option value="Germany">
+                                    <option value="France">
+                                    <option value="Italy">
+                                    <option value="Spain">
+                                    <option value="Japan">
+                                    <option value="South Korea">
+                                    <option value="Brazil">
+                                    <option value="Mexico">
+                                    <option value="New Zealand">
+                                    <option value="Singapore">
+                                    <option value="Switzerland">
+                                    <option value="United Arab Emirates">
+                                </datalist>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>2. Purchase Information</legend>
+                        <div class="form-group">
+                            <label for="volume">Estimated Purchase Volume <span class="required-star">*</span></label>
+                            <select id="volume" name="volume" required>
+                                <option value="" disabled selected>Select an option...</option>
+                                <option value="Initial Test Batch (8-20 Sets)">Initial Test Batch (8–20 Sets)</option>
+                                <option value="Growth Batch (20-50 Sets)">Growth Batch (20–50 Sets)</option>
+                                <option value="Medium Batch (50-100 Sets)">Medium Batch (50–100 Sets)</option>
+                                <option value="Large-Volume Orders (100+ Sets)">Large-Volume Orders (100+ Sets)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Products Interested In (Check all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Colored Plywood"> Colored Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Solid-Colored Plywood"> Solid-Colored Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Iridescent Color-Shift Plywood"> Iridescent Color-Shift Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="3-Layer-Color Plywood"> 3-Layer-Color Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Raw Plywood"> Raw Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-abs-cb" name="products[]" value="ABS Plastic"> ABS Plastic</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Acrylic"> Acrylic</label>
+                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="MDF"> MDF</label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="product-other-cb" name="products[]" value="Other"> Other
+                                </label>
+                            </div>
+                            <input type="text" id="product-other-input" class="hidden-input" name="products_other" placeholder="Please specify other products...">
+                        </div>
+
+                        <div id="abs-usage-section" style="display: none; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px dashed var(--border-color);">
+                            <label>What will you mainly use ABS sheets for? <span class="required-star" style="display:none;" id="abs-req-star">*</span></label>
+                            <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 0.8rem;">
+                                <label class="checkbox-label"><input type="checkbox" name="abs_usage[]" value="Signage & Nameplates"> Signage & Nameplates (door signs, office labels, restroom signs)</label>
+                                <label class="checkbox-label"><input type="checkbox" name="abs_usage[]" value="Business Branding & Store Displays"> Business Branding & Store Displays (logos, product tags, display signs)</label>
+                                <label class="checkbox-label"><input type="checkbox" name="abs_usage[]" value="Industrial & Equipment Labels"> Industrial & Equipment Labels (control panels, machine labels)</label>
+                                <label class="checkbox-label"><input type="checkbox" name="abs_usage[]" value="Personalized Items"> Personalized Items (keychains, pet tags, luggage tags)</label>
+                                <label class="checkbox-label"><input type="checkbox" name="abs_usage[]" value="Decorative or Creative Projects"> Decorative or Creative Projects</label>
+                                <label class="checkbox-label"><input type="checkbox" id="abs-usage-other-cb" name="abs_usage[]" value="Other"> Other</label>
+                            </div>
+                            <input type="text" id="abs-usage-other-input" class="hidden-input" name="abs_usage_other" placeholder="Please specify...">
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>3. Size Requirements</legend>
+                        <div class="form-grid-2x2">
+                            <div class="form-group">
+                                <label>Required Thickness</label>
+                                <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 0.8rem;">
+                                    <label class="checkbox-label"><input type="checkbox" name="thickness[]" value="3mm"> 3mm (1/8")</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="thickness[]" value="6mm"> 6mm (1/4")</label>
+                                    <label class="checkbox-label"><input type="checkbox" id="thickness-other-cb" name="thickness[]" value="Other"> Other</label>
+                                </div>
+                                <input type="text" id="thickness-other-input" class="hidden-input" name="thickness_other" placeholder="Specify thickness...">
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Sheet Size</label>
+                                <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 0.8rem;">
+                                    <label class="checkbox-label"><input type="checkbox" name="size[]" value="11.7 x 11.7"> 11.7" × 11.7"</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="size[]" value="A4"> A4</label>
+                                    <label class="checkbox-label"><input type="checkbox" name="size[]" value="A3"> A3</label>
+                                    <label class="checkbox-label"><input type="checkbox" id="size-other-cb" name="size[]" value="Other"> Other</label>
+                                </div>
+                                <input type="text" id="size-other-input" class="hidden-input" name="size_other" placeholder="Specify size...">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>4. Custom Requirements</legend>
+                        <div class="form-group">
+                            <label for="color_req">Specific Color Requirements</label>
+                            <textarea id="color_req" name="color_req" rows="2" placeholder="Looking for specific brand colors or palettes? Let us know here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Message / Questions</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Any other details about your business or needs..."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <div class="social-follow-block">
+                        <p class="social-follow-label">Follow us for inspiration & updates</p>
+                        <div class="social-icons-row">
+                            <a href="https://www.facebook.com/CreatorallyOfficial" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/creatorallyofficial/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                            <a href="https://www.youtube.com/@creatorally-official" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+                            </a>
+                            <a href="https://www.pinterest.com/creatorally_official/_created/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Pinterest">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.37 3.09-5.18 0-2.14-1.44-3.74-4.04-3.74-2.94 0-4.77 2.2-4.77 4.65 0 .84.24 1.44.62 1.9.17.2.19.28.13.51-.04.17-.14.57-.18.73-.06.24-.24.32-.44.23-1.23-.5-1.8-1.86-1.8-3.38 0-2.51 2.12-5.53 6.33-5.53 3.39 0 5.63 2.45 5.63 5.09 0 3.49-1.94 6.1-4.8 6.1-.96 0-1.86-.52-2.17-1.1l-.61 2.33c-.19.73-.56 1.46-.91 2.04.68.2 1.4.31 2.14.31 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@creatorally_official" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-block btn-submit-custom">Submit Wholesale Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    // 使用自执行函数包裹，并在文档就绪时初始化，增强 Shopify 环境兼容性
+    (function() {
+        function initWholesaleScripts() {
+            // "Other" 选项切换逻辑
+            function setupOtherToggle(checkboxId, inputId) {
+                const checkbox = document.getElementById(checkboxId);
+                const inputField = document.getElementById(inputId);
+                if (checkbox && inputField) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            inputField.style.display = 'block';
+                            inputField.focus();
+                        } else {
+                            inputField.style.display = 'none';
+                            inputField.value = '';
+                        }
+                    });
+                }
+            }
+
+            setupOtherToggle('product-other-cb', 'product-other-input');
+            setupOtherToggle('thickness-other-cb', 'thickness-other-input');
+            setupOtherToggle('size-other-cb', 'size-other-input');
+            setupOtherToggle('abs-usage-other-cb', 'abs-usage-other-input');
+
+            // 监听 ABS Plastic 选项来显示/隐藏相关提问
+            const absCheckbox = document.getElementById('product-abs-cb');
+            const absUsageSection = document.getElementById('abs-usage-section');
+            const absReqStar = document.getElementById('abs-req-star');
+            
+            if (absCheckbox && absUsageSection) {
+                absCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        absUsageSection.style.display = 'block';
+                        if (absReqStar) absReqStar.style.display = 'inline';
+                    } else {
+                        absUsageSection.style.display = 'none';
+                        if (absReqStar) absReqStar.style.display = 'none';
+                        // 隐藏时顺便清空已选的用途
+                        const usageCheckboxes = document.querySelectorAll('input[name="abs_usage[]"]');
+                        usageCheckboxes.forEach(cb => cb.checked = false);
+                        const usageOtherInput = document.getElementById('abs-usage-other-input');
+                        if (usageOtherInput) {
+                            usageOtherInput.style.display = 'none';
+                            usageOtherInput.value = '';
+                        }
+                    }
+                });
+            }
+
+            // 【新增】表单提交时的强制校验逻辑
+            const form = document.getElementById('wholesale-submit-form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    // 如果勾选了 ABS，则必须要选择用途
+                    if (absCheckbox && absCheckbox.checked) {
+                        const usageCheckboxes = document.querySelectorAll('input[name="abs_usage[]"]');
+                        let isUsageSelected = false;
+                        
+                        usageCheckboxes.forEach(function(cb) {
+                            if (cb.checked) {
+                                isUsageSelected = true;
+                            }
+                        });
+
+                        if (!isUsageSelected) {
+                            e.preventDefault(); // 拦截表单提交
+                            alert("Please select at least one intended use for ABS sheets before submitting. (请在提交前至少选择一项 ABS 的用途)");
+                            // 自动滚动到必填区域
+                            if (absUsageSection) {
+                                absUsageSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                // 闪烁一下边框提醒用户
+                                absUsageSection.style.border = "2px solid red";
+                                setTimeout(() => {
+                                    absUsageSection.style.border = "1px dashed var(--border-color)";
+                                }, 2000);
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 弹窗逻辑
+            const triggerBtn = document.getElementById('batch-guide-btn');
+            const popup      = document.getElementById('batch-popup');
+            const overlay    = document.getElementById('batch-overlay');
+            const closeBtn   = document.getElementById('batch-popup-close');
+
+            function openPopup() {
+                overlay.classList.add('active');
+                popup.classList.add('active');
+            }
+
+            function closePopup() {
+                overlay.classList.remove('active');
+                popup.classList.remove('active');
+            }
+
+            if (triggerBtn) triggerBtn.addEventListener('click', openPopup);
+            if (closeBtn)   closeBtn.addEventListener('click', closePopup);
+            if (overlay)    overlay.addEventListener('click', closePopup);
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closePopup();
+            });
+        }
+
+        // 兼容 Shopify 的 DOM 加载状态
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initWholesaleScripts);
+        } else {
+            initWholesaleScripts();
+        }
+    })();
+</script>
