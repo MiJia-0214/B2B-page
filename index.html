@@ -388,6 +388,40 @@
     accent-color: var(--brand-blue);
 }
 
+#wholesale-custom-page .product-gallery-section {
+    display: none;
+    grid-column: 1 / -1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: #fff;
+    padding: 14px;
+    overflow-x: auto;
+}
+
+#wholesale-custom-page .product-gallery-track {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(140px, 1fr));
+    gap: 12px;
+    min-width: 760px;
+}
+
+#wholesale-custom-page .product-gallery-track img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+#wholesale-custom-page .product-option-top { order: 1; }
+#wholesale-custom-page .product-gallery-section { order: 2; }
+#wholesale-custom-page .product-option-lower { order: 3; }
+
+@media (max-width: 768px) {
+    #wholesale-custom-page .product-option-other { order: 3; }
+    #wholesale-custom-page .product-gallery-section { order: 4; }
+}
+
 #wholesale-custom-page .hidden-input {
     display: none;
     margin-top: 12px;
@@ -937,15 +971,26 @@
                         <div class="form-group">
                             <label>Products Interested In (Check all that apply)</label>
                             <div class="checkbox-group">
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Colored Plywood"> Colored Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Solid-Colored Plywood"> Solid-Colored Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Iridescent Color-Shift Plywood"> Iridescent Color-Shift Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="3-Layer-Color Plywood"> 3-Layer-Color Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Raw Plywood"> Raw Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" id="product-abs-cb" name="products[]" value="ABS Plastic"> ABS Plastic</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Acrylic"> Acrylic</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="MDF"> MDF</label>
-                                <label class="checkbox-label">
+                                <label class="checkbox-label product-option-top"><input type="checkbox" id="product-colored-cb" name="products[]" value="Colored Plywood"> Colored Plywood</label>
+                                <label class="checkbox-label product-option-top"><input type="checkbox" id="product-solid-cb" name="products[]" value="Solid-Colored Plywood"> Solid-Colored Plywood</label>
+                                <label class="checkbox-label product-option-top"><input type="checkbox" id="product-iridescent-cb" name="products[]" value="Iridescent Color-Shift Plywood"> Iridescent Color-Shift Plywood</label>
+
+                                <div id="product-gallery-section" class="product-gallery-section" aria-hidden="true">
+                                    <div class="product-gallery-track">
+                                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Creatorally_8pcs_Pre-paint_colored_Plywood_Sheets.jpg?v=1774245016" alt="Colored plywood sample 1">
+                                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017" alt="Solid colored plywood sample 2">
+                                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Iridescent-color-shift-plywood.jpg?v=1774245017" alt="Iridescent plywood sample 3">
+                                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/3-layer-color-plywood.jpg?v=1774245016" alt="3-layer plywood sample 4">
+                                        <img src="https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Raw-plywood.jpg?v=1774245016" alt="Raw plywood sample 5">
+                                    </div>
+                                </div>
+
+                                <label class="checkbox-label product-option-lower"><input type="checkbox" name="products[]" value="3-Layer-Color Plywood"> 3-Layer-Color Plywood</label>
+                                <label class="checkbox-label product-option-lower"><input type="checkbox" name="products[]" value="Raw Plywood"> Raw Plywood</label>
+                                <label class="checkbox-label product-option-lower"><input type="checkbox" id="product-abs-cb" name="products[]" value="ABS Plastic"> ABS Plastic</label>
+                                <label class="checkbox-label product-option-lower"><input type="checkbox" name="products[]" value="Acrylic"> Acrylic</label>
+                                <label class="checkbox-label product-option-lower"><input type="checkbox" name="products[]" value="MDF"> MDF</label>
+                                <label class="checkbox-label product-option-lower product-option-other">
                                     <input type="checkbox" id="product-other-cb" name="products[]" value="Other"> Other
                                 </label>
                             </div>
@@ -1056,6 +1101,25 @@
             setupOtherToggle('thickness-other-cb', 'thickness-other-input');
             setupOtherToggle('size-other-cb', 'size-other-input');
             setupOtherToggle('abs-usage-other-cb', 'abs-usage-other-input');
+
+            const galleryTriggerIds = ['product-colored-cb', 'product-solid-cb', 'product-iridescent-cb'];
+            const productGallerySection = document.getElementById('product-gallery-section');
+
+            function toggleProductGallery() {
+                if (!productGallerySection) return;
+                const shouldShow = galleryTriggerIds.some((id) => {
+                    const checkbox = document.getElementById(id);
+                    return checkbox && checkbox.checked;
+                });
+                productGallerySection.style.display = shouldShow ? 'block' : 'none';
+                productGallerySection.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+            }
+
+            galleryTriggerIds.forEach((id) => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) checkbox.addEventListener('change', toggleProductGallery);
+            });
+            toggleProductGallery();
 
             // 监听 ABS Plastic 选项来显示/隐藏相关提问
             const absCheckbox = document.getElementById('product-abs-cb');
