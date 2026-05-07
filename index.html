@@ -1162,6 +1162,25 @@
             });
             renderProductGallery();
 
+            const galleryTriggerIds = ['product-colored-cb', 'product-solid-cb', 'product-iridescent-cb'];
+            const productGallerySection = document.getElementById('product-gallery-section');
+
+            function toggleProductGallery() {
+                if (!productGallerySection) return;
+                const shouldShow = galleryTriggerIds.some((id) => {
+                    const checkbox = document.getElementById(id);
+                    return checkbox && checkbox.checked;
+                });
+                productGallerySection.style.display = shouldShow ? 'block' : 'none';
+                productGallerySection.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+            }
+
+            galleryTriggerIds.forEach((id) => {
+                const checkbox = document.getElementById(id);
+                if (checkbox) checkbox.addEventListener('change', toggleProductGallery);
+            });
+            toggleProductGallery();
+
             // 监听 ABS Plastic 选项来显示/隐藏相关提问
             const absCheckbox = document.getElementById('product-abs-cb');
             const absUsageSection = document.getElementById('abs-usage-section');
