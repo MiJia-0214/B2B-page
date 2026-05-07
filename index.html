@@ -388,6 +388,38 @@
     accent-color: var(--brand-blue);
 }
 
+#wholesale-custom-page .product-gallery-section {
+    display: none;
+    grid-column: 1 / -1;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: #fff;
+    padding: 14px;
+    overflow-x: auto;
+}
+
+#wholesale-custom-page .product-gallery-track {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    gap: 12px;
+    min-width: 620px;
+}
+
+#wholesale-custom-page .product-gallery-track img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    #wholesale-custom-page .product-gallery-track {
+        grid-template-columns: repeat(2, minmax(130px, 1fr));
+        min-width: 420px;
+    }
+}
+
 #wholesale-custom-page .hidden-input {
     display: none;
     margin-top: 12px;
@@ -937,17 +969,21 @@
                         <div class="form-group">
                             <label>Products Interested In (Check all that apply)</label>
                             <div class="checkbox-group">
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Colored Plywood"> Colored Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Solid-Colored Plywood"> Solid-Colored Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Iridescent Color-Shift Plywood"> Iridescent Color-Shift Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="3-Layer-Color Plywood"> 3-Layer-Color Plywood</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Raw Plywood"> Raw Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-colored-cb" name="products[]" value="Colored Plywood"> Colored Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-solid-cb" name="products[]" value="Solid-Colored Plywood"> Solid-Colored Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-iridescent-cb" name="products[]" value="Iridescent Color-Shift Plywood"> Iridescent Color-Shift Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-3layer-cb" name="products[]" value="3-Layer-Color Plywood"> 3-Layer-Color Plywood</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-raw-cb" name="products[]" value="Raw Plywood"> Raw Plywood</label>
                                 <label class="checkbox-label"><input type="checkbox" id="product-abs-cb" name="products[]" value="ABS Plastic"> ABS Plastic</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="Acrylic"> Acrylic</label>
-                                <label class="checkbox-label"><input type="checkbox" name="products[]" value="MDF"> MDF</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-acrylic-cb" name="products[]" value="Acrylic"> Acrylic</label>
+                                <label class="checkbox-label"><input type="checkbox" id="product-mdf-cb" name="products[]" value="MDF"> MDF</label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" id="product-other-cb" name="products[]" value="Other"> Other
                                 </label>
+                            </div>
+
+                            <div id="product-gallery-section" class="product-gallery-section" aria-hidden="true">
+                                <div id="product-gallery-track" class="product-gallery-track"></div>
                             </div>
                             <input type="text" id="product-other-input" class="hidden-input" name="products_other" placeholder="Please specify other products...">
                         </div>
@@ -1003,26 +1039,7 @@
                         </div>
                     </fieldset>
 
-                    <div class="social-follow-block">
-                        <p class="social-follow-label">Follow us for inspiration & updates</p>
-                        <div class="social-icons-row">
-                            <a href="https://www.facebook.com/CreatorallyOfficial" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                            </a>
-                            <a href="https://www.instagram.com/creatorallyofficial/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                            </a>
-                            <a href="https://www.youtube.com/@creatorally-official" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
-                            </a>
-                            <a href="https://www.pinterest.com/creatorally_official/_created/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Pinterest">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.09-2.37 3.09-5.18 0-2.14-1.44-3.74-4.04-3.74-2.94 0-4.77 2.2-4.77 4.65 0 .84.24 1.44.62 1.9.17.2.19.28.13.51-.04.17-.14.57-.18.73-.06.24-.24.32-.44.23-1.23-.5-1.8-1.86-1.8-3.38 0-2.51 2.12-5.53 6.33-5.53 3.39 0 5.63 2.45 5.63 5.09 0 3.49-1.94 6.1-4.8 6.1-.96 0-1.86-.52-2.17-1.1l-.61 2.33c-.19.73-.56 1.46-.91 2.04.68.2 1.4.31 2.14.31 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
-                            </a>
-                            <a href="https://www.tiktok.com/@creatorally_official" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
-                            </a>
-                        </div>
-                    </div>
+                    
 
                     <button type="submit" class="btn btn-block btn-submit-custom">Submit Wholesale Inquiry</button>
                 </form>
@@ -1056,6 +1073,75 @@
             setupOtherToggle('thickness-other-cb', 'thickness-other-input');
             setupOtherToggle('size-other-cb', 'size-other-input');
             setupOtherToggle('abs-usage-other-cb', 'abs-usage-other-input');
+            const productImageMap = {
+                'Colored Plywood': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Creatorally_8pcs_Pre-paint_colored_Plywood_Sheets.jpg?v=1774245016',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017'
+                ],
+                'Solid-Colored Plywood': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/3-layer-color-plywood.jpg?v=1774245016'
+                ],
+                'Iridescent Color-Shift Plywood': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Iridescent-color-shift-plywood.jpg?v=1774245017',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Creatorally_8pcs_Pre-paint_colored_Plywood_Sheets.jpg?v=1774245016'
+                ],
+                '3-Layer-Color Plywood': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/3-layer-color-plywood.jpg?v=1774245016',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Raw-plywood.jpg?v=1774245016'
+                ],
+                'Raw Plywood': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Raw-plywood.jpg?v=1774245016',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Creatorally_8pcs_Pre-paint_colored_Plywood_Sheets.jpg?v=1774245016'
+                ],
+                'ABS Plastic': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Iridescent-color-shift-plywood.jpg?v=1774245017'
+                ],
+                'Acrylic': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Iridescent-color-shift-plywood.jpg?v=1774245017',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/3-layer-color-plywood.jpg?v=1774245016'
+                ],
+                'MDF': [
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Raw-plywood.jpg?v=1774245016',
+                    'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017'
+                ]
+            };
+            var productGallerySection = document.getElementById('product-gallery-section');
+            var productGalleryTrack = document.getElementById('product-gallery-track');
+            var productCheckboxes = document.querySelectorAll('input[name="products[]"]');
+
+            function renderProductGallery() {
+                if (!productGallerySection || !productGalleryTrack) return;
+
+                const selectedProducts = Array.from(productCheckboxes)
+                    .filter((cb) => cb.checked && productImageMap[cb.value])
+                    .map((cb) => cb.value);
+
+                if (!selectedProducts.length) {
+                    productGallerySection.style.display = 'none';
+                    productGallerySection.setAttribute('aria-hidden', 'true');
+                    productGalleryTrack.innerHTML = '';
+                    return;
+                }
+
+                const imagesPerProduct = selectedProducts.length > 4 ? 1 : 2;
+                const galleryImages = selectedProducts.flatMap((productName) =>
+                    (productImageMap[productName] || []).slice(0, imagesPerProduct)
+                ).slice(0, 8);
+
+                productGalleryTrack.innerHTML = galleryImages.map((src, index) =>
+                    `<img src="${src}" alt="${selectedProducts[Math.floor(index / imagesPerProduct)] || 'Product'} sample ${index + 1}">`
+                ).join('');
+
+                productGallerySection.style.display = 'block';
+                productGallerySection.setAttribute('aria-hidden', 'false');
+            }
+
+            productCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', renderProductGallery);
+            });
+            renderProductGallery();
 
             // 监听 ABS Plastic 选项来显示/隐藏相关提问
             const absCheckbox = document.getElementById('product-abs-cb');
