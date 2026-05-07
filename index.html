@@ -1126,9 +1126,9 @@
                     'https://cdn.shopify.com/s/files/1/0626/8554/4620/files/Solid-color-plywood.jpg?v=1774245017'
                 ]
             };
-            const productGallerySection = document.getElementById('product-gallery-section');
-            const productGalleryTrack = document.getElementById('product-gallery-track');
-            const productCheckboxes = document.querySelectorAll('input[name="products[]"]');
+            var productGallerySection = document.getElementById('product-gallery-section');
+            var productGalleryTrack = document.getElementById('product-gallery-track');
+            var productCheckboxes = document.querySelectorAll('input[name="products[]"]');
 
             function renderProductGallery() {
                 if (!productGallerySection || !productGalleryTrack) return;
@@ -1161,25 +1161,6 @@
                 checkbox.addEventListener('change', renderProductGallery);
             });
             renderProductGallery();
-
-            const galleryTriggerIds = ['product-colored-cb', 'product-solid-cb', 'product-iridescent-cb'];
-            const productGallerySection = document.getElementById('product-gallery-section');
-
-            function toggleProductGallery() {
-                if (!productGallerySection) return;
-                const shouldShow = galleryTriggerIds.some((id) => {
-                    const checkbox = document.getElementById(id);
-                    return checkbox && checkbox.checked;
-                });
-                productGallerySection.style.display = shouldShow ? 'block' : 'none';
-                productGallerySection.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
-            }
-
-            galleryTriggerIds.forEach((id) => {
-                const checkbox = document.getElementById(id);
-                if (checkbox) checkbox.addEventListener('change', toggleProductGallery);
-            });
-            toggleProductGallery();
 
             // 监听 ABS Plastic 选项来显示/隐藏相关提问
             const absCheckbox = document.getElementById('product-abs-cb');
